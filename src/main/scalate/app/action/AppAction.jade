@@ -1,0 +1,33 @@
+- import app.action._
+
+!!! 5
+html
+  head
+    != antiCsrfMeta
+    != xitrumCss
+
+    meta(content="text/html; charset=utf-8" http-equiv="content-type")
+
+    title Keyword table
+
+    body
+
+      h2 Keyword table
+
+      .container
+        .col-md-9
+
+          ul
+            - for (element <- RVTableElements.get)
+              li
+                = element.value
+
+        .col-md-3
+
+          #flash
+            !~ jsRenderFlash()
+
+          != renderedView
+
+      != jsDefaults
+      != jsForView

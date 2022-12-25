@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Response</title>
+  <style type="text/css">
+    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+    div.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+  </style>
+</head>
+
+<body>
+
+<table id="myTable" class="table table-borderless table-striped table-earning">
+  <thead>
+  <tr>
+    <th>date</th>
+    <th>file name</th>
+  </tr>
+  </thead>
+  <tbody id="testBody"></tbody>
+</table>
+<script>
+  const items1 = [
+    { date: "10/17/2018", name: "john doe" },
+    { date: "10/18/2018", name: "jane doe" },
+  ];
+  const items2 = [
+    { date: "10/17/2019", name: "john doe" },
+    { date: "10/18/2019", name: "jane doe" },
+  ];
+  function loadTableData(items) {
+    const table = document.getElementById("testBody");
+    items.forEach( item => {
+      let row = table.insertRow();
+      let date = row.insertCell(0);
+      date.innerHTML = item.date;
+      let name = row.insertCell(1);
+      name.innerHTML = item.name;
+    });
+  }
+  loadTableData(items1);
+  loadTableData(items2);
+  loadTableData([]);
+</script>
+
+
+
+
+<!--button for method-->
+<!--  <p style="text-align: center">-->
+<!--  <form action="" method="post">-->
+<!--    <button name="foo" value="upvote">Upvote</button>-->
+<!--  </form>-->
+<!--  </p>-->
+
+
+  <!-- This file lives in public/500.html -->
+<!--  <div class="dialog">-->
+<!--    <h1>We're sorry, but something went wrong.</h1>-->
+<!--    <p>We've been notified about this issue and we'll take a look at it shortly.</p>-->
+<!--  </div>-->
+</body>
+</html>

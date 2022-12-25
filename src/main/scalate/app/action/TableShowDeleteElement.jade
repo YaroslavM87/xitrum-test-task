@@ -1,0 +1,15 @@
+- import app.action._
+
+h3 Delete table element
+
+form(action={url[TableElementDelete]} method="post")
+  != antiCsrfInput
+
+  br
+  input(id="add" type="text" name="tableElementToDeleteTitle" value="")
+  br
+
+  input(type="submit" value="Delete")
+
+  p
+    a(href={url[TableShow]}) Cancel

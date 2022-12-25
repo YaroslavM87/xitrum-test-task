@@ -1,0 +1,15 @@
+- import app.action._
+
+h3 Add new table element
+
+form(action={url[TableElementAdd]} method="post")
+  != antiCsrfInput
+
+  br
+  input(id="add" type="text" name="newTableElementTitle" value="")
+  br
+
+  input(type="submit" value="Add")
+
+  p
+    a(href={url[TableShow]}) Cancel
